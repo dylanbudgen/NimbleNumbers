@@ -15,12 +15,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     public void startGame(View view) {
 
         Log.d("DEBUG", "000P Button pressed ");
 
-        Intent intent = new Intent(this, GameActivity.class);
+        Intent intent = new Intent(this, PlayOptionsActivity.class);
         startActivity(intent);
 
     }

@@ -30,7 +30,7 @@ public class ScoreActivity extends AppCompatActivity {
             int accuracy = 0;
             updateTextValue(R.id.textView_accuracy_value, accuracy);
         } else {
-            double accuracy = (correctAnswers / (correctAnswers + incorrectAnswers)) * 100;
+            double accuracy = ((double) correctAnswers / ((double) correctAnswers + (double) incorrectAnswers)) * 100;
             Log.d("DEBUG", "000P Acc: " + accuracy);
             updateTextValue(R.id.textView_accuracy_value, (int) Math.round(accuracy));
         }
@@ -44,7 +44,13 @@ public class ScoreActivity extends AppCompatActivity {
     private void updateTextValue(int id, int value) {
 
         TextView textView = (TextView) findViewById(id);
-        textView.setText(Integer.toString(value));
+
+        if(id == R.id.textView_accuracy_value) {
+            textView.setText(Integer.toString(value) + "%");
+        } else {
+            textView.setText(Integer.toString(value));
+        }
+
 
     }
 
